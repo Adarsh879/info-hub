@@ -1,0 +1,30 @@
+.tag {
+  display: inline-block;
+  background-color: #e1ecf4;
+  color: #39739d;
+  font-size: 12px;
+  padding: 5px 6px;
+  border: 1px solid transparent;
+  margin: 2px 5px 2px 0;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 3px;
+}
+
+.tag:active {
+  color: #0095ff;
+}
+.tag:hover {
+  color: #2c5777;
+  background-color: #d1e5f1;
+  border-color: transparent;
+}
+
+.multiplier {
+  color: #848d95;
+}
+
+.count {
+  color: #6a737c;
+  font-size: 11px;
+}

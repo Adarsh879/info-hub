@@ -1,0 +1,35 @@
+.layout {
+  background-color: #eff0f1;
+  min-height: 100vh;
+}
+
+.container {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 900px;
+}
+
+.topForm {
+  /* height: 60px; */
+  display: flex;
+  align-items: center;
+  transition: 120ms;
+
+  /* @media (--m) { */
+  height: 130px;
+  background-image: url("../../../static/svg/background.svg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  /* } */
+}
+
+.topForm > h1 {
+  /* font-size: 22px; */
+  padding-left: 16px;
+
+  /* @media (--m) { */
+  font-size: 27px;
+  /* } */
+}

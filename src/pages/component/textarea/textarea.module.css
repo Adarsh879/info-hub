@@ -1,0 +1,59 @@
+.textarea-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.textarea {
+  padding: 10px;
+  height: 100px;
+  width: 100%;
+  font-size: 14px;
+  border: 1px solid #bbc0c4;
+  background-color: #fff;
+  color: #0c0d0e;
+  resize: vertical;
+  margin: 2px 0;
+}
+
+.textarea:focus {
+  border-color: #6cbbf7;
+  box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
+  color: var(--black);
+  outline: 0;
+}
+
+.textarea::placeholder {
+  color: #bbc0c4;
+}
+
+.hasError {
+  border-color: #de535e;
+}
+
+.hasError:focus {
+  border-color: #de535e;
+  box-shadow: 0 0 0 4px rgba(192, 45, 46, 0.15);
+}
+
+.errorMessage {
+  color: #d1383d;
+  padding: 2px;
+  font-size: 12px;
+}
+
+.label {
+  margin: 2px 0;
+  padding: 0 2px;
+  color: #0c0d0e;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.inputInfo {
+  padding: 0 2px;
+  margin-top: 2px;
+  color: #3c4146;
+  font-size: 12px;
+}

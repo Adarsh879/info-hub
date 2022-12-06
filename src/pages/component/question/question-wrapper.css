@@ -1,0 +1,6 @@
+.question-wrapper {
+  display: flex;
+  width: 750px;
+  padding: 8px 12px 20px 12px;
+  border-bottom: 1px solid #eff0f1;
+}
