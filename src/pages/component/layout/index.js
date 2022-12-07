@@ -1,30 +1,26 @@
-import React from 'react'
-import cn from 'classnames'
+import React from "react";
+import cn from "classnames";
 
-import CONST from '../../constants'
-import useWindowSize from '../../hooks/useWindowSize'
+import Sidebar from "./sidebar";
+import Main from "./main";
+import PopularTags from "./extra";
+import Header from "./header";
 
-import Sidebar from './sidebar'
-import Main from './main'
-import Extra from './extra'
-import Header from './header'
+import styles from "./layout.module.css";
 
-import styles from './layout.module.css'
-
-const Layout = ({ extra = true, children }) => {
-  const size = useWindowSize()
+const Layout = ({ children }) => {
   return (
     <div className={styles.layout}>
       <Header />
       <div className={styles.container}>
-        <div className={cn(styles.body, !extra && styles.main)}>
-          {size.width > CONST.MOBILE_SIZE && <Sidebar />}
+        <div className={cn(styles.body, styles.main)}>
+          <Sidebar />
           <Main>{children}</Main>
-          {size.width > CONST.TABLET_SIZE && extra && <Extra />}
+          <PopularTags />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

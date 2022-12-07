@@ -34,9 +34,9 @@
   flex-shrink: 0;
   height: 100%;
 
-  @media (--m) {
+  /* @media (--m) {
     display: none;
-  }
+  } */
 
   svg {
     font-size: 20px;
@@ -57,17 +57,13 @@
     color: var(--black-700);
   }
 
-  @media (--m) {
-    margin-left: 5px;
-  }
+  margin-left: 5px;
 
   p {
     display: none;
     margin-top: 3px;
 
-    @media (--m) {
-      display: block;
-    }
+    display: block;
   }
 
   span {

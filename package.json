@@ -46,5 +46,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "postcss-custom-media": "^9.0.1",
+    "postcss-loader": "^7.0.2",
+    "postcss-nested": "^6.0.0"
   }
 }

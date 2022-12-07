@@ -1,14 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext } from "react";
 
-import { TagContext } from '../../../store/tag'
+import Tag from "../../tag/tag";
+import { Spinner } from "../../icons";
 
-import Tag from '../../tag'
-import { Spinner } from '../../icons'
+import styles from "./extra.module.css";
+import { useEffect } from "react";
+import { useState } from "react";
+import { publicFetch } from "../../../../utils/fetcher";
 
-import styles from './extra.module.css'
+const PopularTags = ({ marginTop = 24 }) => {
+  // const { tagState } = useContext(TagContext);
+  const [tagState, setTagState] = useState({ isloading: true });
+  useEffect(() => {
+    const fetchPopularTags = async () => {
+      const { data } = await publicFetch.get("/tags/populertags");
+      setTagState({ isloading: false, data: data });
+    };
 
-const Extra = ({ marginTop = 24 }) => {
-  const { tagState } = useContext(TagContext)
+    fetchPopularTags();
+  }, []);
 
   return (
     <div className={styles.container}>
@@ -17,21 +27,23 @@ const Extra = ({ marginTop = 24 }) => {
         style={{ marginTop: `${marginTop}px` }}
       >
         <h2>Popular Tags</h2>
-        {!tagState && (
+        {tagState.isloading && (
           <div className="loading">
             <Spinner />
           </div>
         )}
-        <div className={styles.popularTags}>
-          {tagState?.map((tag) => (
-            <Tag key={tag._id} count={tag.count}>
-              {tag._id}
-            </Tag>
-          ))}
-        </div>
+        {!tagState.isloading && (
+          <div className={styles.popularTags}>
+            {tagState.data?.map((tag) => (
+              <Tag key={tag._id} count={tag.count}>
+                {tag._id}
+              </Tag>
+            ))}
+          </div>
+        )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Extra
+export default PopularTags;
