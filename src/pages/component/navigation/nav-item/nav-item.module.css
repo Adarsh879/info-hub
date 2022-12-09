@@ -8,20 +8,17 @@
   transition: var(--fade);
   text-decoration: none;
   line-height: 1.5;
+}
 
-  &:hover {
-    color: var(--black-900);
-  }
-  span {
-    margin-left: 20px;
-  }
-  svg {
-    font-size: 13px;
-
-    & + * {
-      margin-left: 7px;
-    }
-  }
+.navItem:hover {
+  color: var(--black-900);
+}
+.navItem span {
+  margin-left: 20px;
+}
+.navItem svg {
+  font-size: 13px;
+  margin-left: 7px;
 }
 
 .navItemSelected {

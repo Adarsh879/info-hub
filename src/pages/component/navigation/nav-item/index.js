@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const NavItem = ({ href, children, selected, ...props }) => {
   return (
-    <Link href={href} as={href}>
+    <Link to={href}>
       <a
         className={cn(styles.navItem, selected && styles.navItemSelected)}
         {...props}

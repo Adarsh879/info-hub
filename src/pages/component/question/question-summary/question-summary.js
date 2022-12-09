@@ -1,14 +1,9 @@
 import React from "react";
-// import Link from "next/link";
 import formatDistanceToNowStrict from "date-fns/formatDistanceToNowStrict";
-
-// import Tag from "../../tag";
 
 import "./question-summary.css";
 import { Link } from "react-router-dom";
 import Tag from "../../tag/tag";
-
-var tagss = ["afafaf", "faaga"];
 
 const QuestionSummary = ({
   id,
@@ -31,7 +26,7 @@ const QuestionSummary = ({
           ))}
         </div>
         <div className="userDetails">
-          <Link href="/users/[user]" as={`/users/`}>
+          <Link to={`/users/${author.id}`}>
             <a>
               <img
                 src={`https://secure.gravatar.com/avatar/${author.id}?s=32&d=identicon`}
@@ -46,7 +41,7 @@ const QuestionSummary = ({
                 addSuffix: true,
               })}
             </span>
-            <Link href="/users/[user]" as={`/users/`}>
+            <Link to={`/users/${author.id}`}>
               <a>{author.username}</a>
             </Link>
           </div>

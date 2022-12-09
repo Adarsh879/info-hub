@@ -1,13 +1,13 @@
 @import url("http://fonts.cdnfonts.com/css/libre-franklin-medium");
 
-/* * {
-  box-sizing: inherit !important;
-} */
-
 .background {
   width: 100%;
   height: 100%;
 }
+
+/* .background > * {
+  box-sizing: content-box;
+} */
 
 .title {
   width: 50%;
@@ -79,6 +79,8 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  box-sizing: content-box;
+  border: none;
 }
 
 button {

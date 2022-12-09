@@ -37,11 +37,7 @@ function UsersPage() {
   }, [searchTerm]);
 
   return (
-    <Layout extra={false}>
-      <Head>
-        <title>Users - Clone of Stackoverflow</title>
-      </Head>
-
+    <>
       <PageTitle title="Users" borderBottom={false} />
 
       <SearchInput
@@ -77,7 +73,7 @@ function UsersPage() {
           )}
         </>
       )}
-    </Layout>
+    </>
   );
 }
 

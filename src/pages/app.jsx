@@ -9,6 +9,7 @@ import "../static/css/variables.css";
 import QuestionAskView from "./component/question-ask-view/question-ask-view";
 import QuestionForm from "./component/question-ask-view/question-form/question-form";
 import QuestionDetails from "./component/question-details/question-details";
+import UserDetail from "./component/user/userDetails";
 
 var ask_view = (
   <QuestionAskView>
@@ -35,7 +36,8 @@ function App() {
           path="/question/:questionId/:title"
           element={<QuestionDetails />}
         />
-        <Route></Route>
+        <Route path="/:tag" element={<Feeds isTagged={true} />} />
+        <Route path="/users/:userid" element={<UserDetail />} />
       </Route>
       <Route
         path="/login"

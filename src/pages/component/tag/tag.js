@@ -6,7 +6,7 @@ import "./tag.css";
 const Tag = ({ children, className, count, ...props }) => {
   return count ? (
     <div>
-      <Link href={{ pathname: "/", query: { tag: children } }}>
+      <Link to={`/${children}`}>
         <a className="tag" {...props}>
           {children}
         </a>
@@ -16,7 +16,7 @@ const Tag = ({ children, className, count, ...props }) => {
       <span className="count">{count}</span>
     </div>
   ) : (
-    <Link href={{ pathname: "/", query: { tag: children } }}>
+    <Link to={`/${children}`}>
       <a className="tag" {...props}>
         {children}
       </a>

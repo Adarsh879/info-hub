@@ -1,24 +1,22 @@
-import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
-import formatDistanceToNowStrict from 'date-fns/formatDistanceToNowStrict'
+import React, { useEffect, useState } from "react";
+import formatDistanceToNowStrict from "date-fns/formatDistanceToNowStrict";
 
-import { publicFetch } from '../../../util/fetcher'
+import { Spinner } from "../../../icons";
 
-import { Spinner } from '../../icons'
+import styles from "./avatar-card.module.css";
+import { publicFetch } from "../../../../../utils/fetcher";
 
-import styles from './avatar-card.module.css'
-
-const UserAvatar = ({ username }) => {
-  const [userInfo, setUserInfo] = useState(null)
+const UserAvatar = ({ userid }) => {
+  const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
     const fetchUser = async () => {
-      const { data } = await publicFetch.get(`/user/${username}`)
-      setUserInfo(data)
-    }
+      const { data } = await publicFetch.get(`/user/${userid}`);
+      setUserInfo(data);
+    };
 
-    fetchUser()
-  }, [username])
+    fetchUser();
+  }, []);
 
   return (
     <div>
@@ -29,17 +27,15 @@ const UserAvatar = ({ username }) => {
           </div>
         ) : (
           <div className={styles.avatar}>
-            <Link href="/users/[username]" as={`/users/${username}`}>
-              <a>
-                <img
-                  src={`https://secure.gravatar.com/avatar/${userInfo.id}?s=164&d=identicon`}
-                  alt={username}
-                />
-              </a>
-            </Link>
+            <a>
+              <img
+                src={`https://secure.gravatar.com/avatar/${userid}?s=164&d=identicon`}
+                alt={userInfo?.username}
+              />
+            </a>
           </div>
         )}
-        <h2 className={styles.username}>{username}</h2>
+        <h2 className={styles.username}>{userInfo?.username}</h2>
         {!userInfo ? (
           <div className="loading">
             <Spinner />
@@ -47,10 +43,10 @@ const UserAvatar = ({ username }) => {
         ) : (
           <div className={styles.created}>
             <p>
-              Created:{' '}
+              Created:{" "}
               <span>
-                {formatDistanceToNowStrict(new Date(userInfo.created), {
-                  addSuffix: true
+                {formatDistanceToNowStrict(new Date(userInfo?.created), {
+                  addSuffix: true,
                 })}
               </span>
             </p>
@@ -58,7 +54,7 @@ const UserAvatar = ({ username }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default UserAvatar
+export default UserAvatar;

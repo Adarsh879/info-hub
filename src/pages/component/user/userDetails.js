@@ -1,30 +1,29 @@
 import React, { useEffect, useState } from "react";
-
-import Layout from "../layout";
 import UserCard from "./user-card";
 import AvatarCard from "./user-card/avatar-card";
 import PostList from "./user-card/post-list";
 import PostItem from "./user-card/post-list/post-item";
 import { Spinner } from "../icons";
 import { publicFetch } from "../../../utils/fetcher";
+import { useParams } from "react-router-dom";
 
-const UserDetail = ({ username }) => {
+const UserDetail = () => {
   const [posts, setPosts] = useState(null);
-  const [postType, setPostType] = useState("Questions");
+  const { userid } = useParams();
 
   useEffect(() => {
     const fetchQuestions = async () => {
-      const { data } = await publicFetch.get(`/question/user/${username}`);
+      const { data } = await publicFetch.get(`/question/user/${userid}`);
       setPosts(data);
     };
     fetchQuestions();
-  }, [postType, username]);
+  }, []);
 
   return (
-    <Layout extra={false}>
+    <>
       <UserCard>
-        <AvatarCard username={username} />
-        <PostList postType={postType} setPostType={setPostType}>
+        <AvatarCard userid={userid} />
+        <PostList>
           {!posts && (
             <div className="loading">
               <Spinner />
@@ -48,17 +47,8 @@ const UserDetail = ({ username }) => {
           )}
         </PostList>
       </UserCard>
-    </Layout>
+    </>
   );
 };
-
-export async function getServerSideProps(context) {
-  const username = context.params.username;
-  return {
-    props: {
-      username,
-    },
-  };
-}
 
 export default UserDetail;

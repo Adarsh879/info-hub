@@ -33,7 +33,7 @@ const Header = ({ className, ...props }) => {
         <div className={styles.userInfo}>
           <p>
             Welcome{" "}
-            <Link href="/users/[user]" as={`/users/${authState.userInfo.id}`}>
+            <Link to={`/users/${authState.userInfo.id}`}>
               <a>{authState.userInfo.username}!</a>
             </Link>
           </p>
