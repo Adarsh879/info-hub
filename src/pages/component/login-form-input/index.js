@@ -1,7 +1,6 @@
 import React from "react";
 import cn from "classnames";
-
-import { Alert } from "../icons";
+import Style from "./login-form.module.css";
 
 const FormInput = ({
   label,
@@ -15,11 +14,11 @@ const FormInput = ({
       <label id={label}>{label}</label>
       {inputInfo && <p className="inputInfo">{inputInfo}</p>}
       <input
-        className={cn(hasError && "hasError")}
+        className={cn(hasError && Style.hasError)}
         htmlFor={label}
         {...props}
       ></input>
-      {hasError && <p className="inputMessage">{errorMessage}</p>}
+      {hasError && <p className={Style.inputMessage}>{errorMessage}</p>}
     </>
   );
 };

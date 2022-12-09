@@ -1,13 +1,14 @@
 import React, { useContext, useState } from "react";
-import "../static/css/login.css";
-import logo from "../static/image/logo.jpg";
-import profileAvatar from "../static/svg/administrator-male.svg";
+import logo from "../../static/image/logo.jpg";
+import profileAvatar from "../../static/svg/administrator-male.svg";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { AuthContext } from "../store/auth";
-import FormInput from "./component/login-form-input/index";
-import { publicFetch } from "../utils/fetcher";
+import { AuthContext } from "../../store/auth";
+import FormInput from "../component/login-form-input/index";
+import { publicFetch } from "../../utils/fetcher";
 import { useNavigate } from "react-router-dom";
+import Style from "./login.module.css";
+import cn from "classnames";
 
 function LoginPage() {
   const { setAuthState } = useContext(AuthContext);
@@ -15,17 +16,17 @@ function LoginPage() {
   const [loading, setLoading] = useState(false);
 
   return (
-    <div className="background">
-      <div className="title">
-        <h1 className="text">INFO</h1>
-        <h1 className="text hub">HUB</h1>
+    <div className={Style.background}>
+      <div className={Style.title}>
+        <h1 className={Style.text}>ASK</h1>
+        <h1 className={cn(Style.text, Style.hub)}>ME</h1>
       </div>
-      <div className="content">
-        <img src={logo} className="image" />
-        <h2 className="text1">Sign in to continue</h2>
-        <div className="signin-form">
-          <div className="avatar">
-            <embed src={profileAvatar} className="profile" />
+      <div className={Style.content}>
+        <img src={logo} className={Style.image} />
+        <h2 className={Style.text1}>Sign in to continue</h2>
+        <div className={Style.signin_form}>
+          <div className={Style.avatar}>
+            <embed src={profileAvatar} className={Style.profile} />
           </div>
           <Formik
             initialValues={{ userid: "", password: "" }}
@@ -88,18 +89,20 @@ function LoginPage() {
                   hasError={touched.password && errors.password}
                   errorMessage={errors.password && errors.password}
                 />
-                <button type="submit">Sign In</button>
+                <button className={Style.login_button} type="submit">
+                  Sign In
+                </button>
               </form>
             )}
           </Formik>
         </div>
-        <span className="or">
+        <span className={Style.or}>
           <hr></hr>
           <a>OR</a>
           <hr></hr>
         </span>
         <button
-          className="signup-button"
+          className={Style.signup_button}
           onClick={() => {
             navigation("/signup");
           }}

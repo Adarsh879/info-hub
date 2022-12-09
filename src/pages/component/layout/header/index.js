@@ -7,10 +7,11 @@ import Button from "../../button/button";
 import { Menu, Close, Logo } from "../../icons";
 
 import styles from "./header.module.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Header = ({ className, ...props }) => {
   const { authState, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   return (
     <header className={cn(styles.header, className)} {...props}>
@@ -22,14 +23,17 @@ const Header = ({ className, ...props }) => {
           </p>
         </Button>
         <div style={{ flex: 1 }}></div>
-
+        <Button
+          style={{ margin: "auto 0" }}
+          primary
+          onClick={() => navigate("/ask")}
+        >
+          Ask Question
+        </Button>
         <div className={styles.userInfo}>
           <p>
             Welcome{" "}
-            <Link
-              href="/users/[user]"
-              as={`/users/${authState.userInfo.userid}`}
-            >
+            <Link href="/users/[user]" as={`/users/${authState.userInfo.id}`}>
               <a>{authState.userInfo.username}!</a>
             </Link>
           </p>

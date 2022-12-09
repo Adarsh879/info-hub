@@ -20,7 +20,7 @@ const QuestionSummary = ({
 }) => {
   return (
     <div className="summary-container">
-      <Link href="/questions/[slug]" as={`/questions/${id}`}>
+      <Link to={`/question/${id}/${title}`}>
         <a className="link">{title}</a>
       </Link>
       <div className="excerpt">{children}</div>

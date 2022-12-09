@@ -1,13 +1,14 @@
 import React, { useState, useContext } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
-import LoginPage from "./login-page";
-import SignUpPage from "./signup-page";
+import LoginPage from "./auth/login-page";
+import SignUpPage from "./auth/signup-page";
 import DashBoard from "./dashboard";
 import { AuthContext } from "../store/auth";
 import Feeds from "./component/feed/feeds";
 import "../static/css/variables.css";
 import QuestionAskView from "./component/question-ask-view/question-ask-view";
 import QuestionForm from "./component/question-ask-view/question-form/question-form";
+import QuestionDetails from "./component/question-details/question-details";
 
 var ask_view = (
   <QuestionAskView>
@@ -30,6 +31,11 @@ function App() {
       <Route path="/" element={withAuth(<DashBoard />, isAuthenticated)}>
         <Route index element={<Feeds />} />
         <Route path="ask" element={ask_view} />
+        <Route
+          path="/question/:questionId/:title"
+          element={<QuestionDetails />}
+        />
+        <Route></Route>
       </Route>
       <Route
         path="/login"

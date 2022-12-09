@@ -1,27 +1,27 @@
-.tag-input-container {
+.container {
   display: flex;
   flex-direction: column;
   margin: 6px 0;
   width: 100%;
 }
 
-.tag-input-label {
+.label {
   margin: 2px 0;
   padding: 0 2px;
-  color: #0c0d0e;
+  color: var(--black-900);
   font-size: 15px;
   font-weight: 700;
   cursor: pointer;
 }
 
-.tag-input-inputInfo {
+.inputInfo {
   padding: 0 2px;
   margin-top: 2px;
-  color: #0064bd;
+  color: var(--black-700);
   font-size: 12px;
 }
 
-.tag-input-inputContainer {
+.inputContainer {
   position: relative;
   margin: 2px 0;
 }
@@ -30,7 +30,7 @@
   padding-right: 32px;
   box-shadow: 0 0 0 4px rgba(192, 45, 46, 0.15);
   outline: 0;
-  border: 1px solid #de535e;
+  border: 1px solid var(--red-400);
   border-radius: 3px;
   overflow: hidden;
   padding-left: 5px;
@@ -38,21 +38,21 @@
 }
 
 .inputFocused {
-  border-color: #6cbbf7;
+  border-color: var(--blue-300);
   box-shadow: 0 0 0 4px rgba(0, 149, 255, 0.15);
   outline: 0;
 }
 
 .errorMessage {
   margin: 2px 0;
-  color: #d1383d;
+  color: var(--red-500);
   padding: 2px;
   font-size: 12px;
 }
 
 .alert {
   position: absolute;
-  color: #de535e;
+  color: var(--red-400);
   font-size: 15px;
   right: 11px;
   height: 100%;
@@ -67,3 +67,38 @@
   left: 7px;
   top: 0;
 }
+
+/* .react-tagsinput {
+  border: 1px solid var(--black-200);
+  border-radius: 3px;
+}
+
+.react-tagsinput {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+span.react-tagsinput-tag {
+  display: inline-block;
+  background-color: #e1ecf4;
+  color: var(--powder-700);
+  font-size: 12px;
+  padding: 5px 6px;
+  border: 1px solid transparent;
+  margin: 2px 5px 2px 0;
+  line-height: 1;
+  white-space: nowrap;
+  border-radius: 3px;
+}
+
+.react-tagsinput-input {
+  width: 200px;
+  color: #0c0d0e;
+}
+
+.react-tagsinput-input::placeholder {
+  color: #bbc0c4;
+} */

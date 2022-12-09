@@ -5,6 +5,7 @@ import TagsInput from "react-tagsinput";
 import { Alert } from "../icons";
 
 import styles from "./tag-input.module.css";
+import "./react-tagsInput.css";
 
 const FormInput = ({
   label,

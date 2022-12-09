@@ -37,43 +37,44 @@
   /* @media (--m) {
     display: none;
   } */
-
-  svg {
-    font-size: 20px;
-    transition: all ease-in-out 0.1s;
-  }
 }
+
+.menu svg {
+  font-size: 20px;
+  transition: all ease-in-out 0.1s;
+}
+
 .logo {
   display: flex;
   align-items: center;
-  margin-left: 0;
+  margin-left: 5px;
   height: 100%;
   padding: 0 8px;
   font-size: 22px;
   color: var(--black-800);
   font-family: sans-serif;
+}
 
-  &:hover {
-    color: var(--black-700);
-  }
+.logo :hover {
+  color: var(--black-700);
+}
 
-  margin-left: 5px;
+.logo p {
+  display: block;
+  margin-top: 3px;
 
-  p {
-    display: none;
-    margin-top: 3px;
-
+  /* @media (--m) {
     display: block;
-  }
+  } */
+}
 
-  span {
-    font-weight: bold;
-  }
+.logo span {
+  font-weight: bold;
+}
 
-  svg {
-    font-size: 27px;
-    margin-right: 3px;
-  }
+.logo svg {
+  font-size: 27px;
+  margin-right: 3px;
 }
 
 .auth {
@@ -88,9 +89,9 @@
   grid-template-columns: 1fr 43px;
   grid-gap: 5px;
   margin-right: 5px;
+}
 
-  p {
-    padding-right: 5px;
-    border-right: 1px solid var(--black-200);
-  }
+.userInfo p {
+  padding-right: 5px;
+  border-right: 1px solid var(--black-200);
 }
