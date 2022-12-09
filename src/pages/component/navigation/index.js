@@ -19,11 +19,7 @@ const Navigation = () => {
         }
       >
         <World />
-        <span>Stack Overflow</span>
-      </NavItem>
-
-      <NavItem href="/tags" selected={location.pathname == "/tags"}>
-        <span>Tags</span>
+        <span>Home</span>
       </NavItem>
 
       <NavItem

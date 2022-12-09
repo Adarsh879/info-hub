@@ -40,10 +40,6 @@ const Header = ({ className, ...props }) => {
           <a onClick={() => logout()}>log out</a>
         </div>
       </div>
-
-      {/* <div ref={ref}>
-        <NavigationDropdown />
-      </div> */}
     </header>
   );
 };

@@ -40,7 +40,7 @@ const QuestionForm = () => {
           .min(15, "Title must be at least 15 characters."),
         text: Yup.string()
           .required("Body is missing.")
-          .min(30, "Body must be at least 30 characters.")
+          .min(10, "Body must be at least 10 characters.")
           .max(30000, "Body cannot be longer than 30000 characters."),
         tags: Yup.array()
           .required("Please enter at least one tag.")

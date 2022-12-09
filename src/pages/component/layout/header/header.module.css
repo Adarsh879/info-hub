@@ -94,4 +94,5 @@
 .userInfo p {
   padding-right: 5px;
   border-right: 1px solid var(--black-200);
+  margin-left: 10px;
 }

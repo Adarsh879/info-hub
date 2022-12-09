@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import logo from "../../static/image/logo.jpg";
+import logo from "../../static/svg/icons/logo.svg";
 import profileAvatar from "../../static/svg/administrator-male.svg";
 import { Formik } from "formik";
 import * as Yup from "yup";
@@ -22,7 +22,7 @@ function LoginPage() {
         <h1 className={cn(Style.text, Style.hub)}>ME</h1>
       </div>
       <div className={Style.content}>
-        <img src={logo} className={Style.image} />
+        <embed src={logo} className={Style.image} />
         <h2 className={Style.text1}>Sign in to continue</h2>
         <div className={Style.signin_form}>
           <div className={Style.avatar}>

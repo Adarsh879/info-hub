@@ -67,38 +67,3 @@
   left: 7px;
   top: 0;
 }
-
-/* .react-tagsinput {
-  border: 1px solid var(--black-200);
-  border-radius: 3px;
-}
-
-.react-tagsinput {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  overflow: hidden;
-  padding-left: 5px;
-  padding-top: 5px;
-}
-
-span.react-tagsinput-tag {
-  display: inline-block;
-  background-color: #e1ecf4;
-  color: var(--powder-700);
-  font-size: 12px;
-  padding: 5px 6px;
-  border: 1px solid transparent;
-  margin: 2px 5px 2px 0;
-  line-height: 1;
-  white-space: nowrap;
-  border-radius: 3px;
-}
-
-.react-tagsinput-input {
-  width: 200px;
-  color: #0c0d0e;
-}
-
-.react-tagsinput-input::placeholder {
-  color: #bbc0c4;
-} */
